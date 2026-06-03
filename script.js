@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Add animation to elements as they scroll into view
-    const animateElements = document.querySelectorAll('.benefit-card, .info-block, .info-image-wrapper');
+    const animateElements = document.querySelectorAll('.differentiator-card, .treatment-card, .highlight-card, .team-image-frame, .team-content, .testimonial-card, .benefit-card, .card.v3');
     animateElements.forEach(el => {
         el.style.opacity = '0'; // hide initially
         observer.observe(el);

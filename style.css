@@ -1,16 +1,17 @@
 :root {
     /* Color Palette */
-    --bg-color: #FAF8F5;
-    --text-main: #3A312B;
-    --text-muted: #6B5E55;
-    --accent-color: #8C705F;
-    --accent-hover: #735A4B;
-    --border-color: #E8E1DA;
+    --bg-color: #eff0eb;
+    --text-main: #221e1d;
+    --text-muted: #806248;
+    --accent-color: #806248;
+    --accent-hover: #221e1d;
+    --border-color: #e5e2d9;
     --card-bg: #FFFFFF;
+    --gold-color: #dfd0bb;
     
     /* Typography */
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Fromage', 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
     
     /* Spacing & Sizes */
     --nav-height: 90px;
@@ -29,6 +30,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
+    font-weight: 300; /* Outfit Light */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -102,10 +104,10 @@ p {
     left: 0;
     width: 100%;
     height: var(--nav-height);
-    background-color: rgba(250, 248, 245, 0.9);
+    background-color: rgba(239, 240, 235, 0.9);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(232, 225, 218, 0.5);
+    border-bottom: 1px solid rgba(229, 226, 217, 0.5);
 }
 
 .nav-container {
@@ -283,11 +285,6 @@ p {
     background-color: var(--card-bg);
 }
 
-.section-title {
-    font-size: 3rem;
-    margin-bottom: 60px;
-}
-
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -374,24 +371,6 @@ p {
     font-size: 1.05rem;
 }
 
-@media (max-width: 992px) {
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-    .benefit-card.featured {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 30px;
-        gap: 15px;
-    }
-}
-
 /* Webflow Style Section: About Massage Custom Layout */
 .section.bottom-90px {
     padding-top: 20px;
@@ -466,25 +445,6 @@ p {
     line-height: 1.7;
 }
 
-/* Responsive adjustment */
-@media (max-width: 992px) {
-    .about-massage-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .image-wrapper {
-        transform: none;
-    }
-    
-    .card.v3 {
-        margin-left: 0;
-        margin-top: -40px;
-        transform: none;
-        padding: 40px 30px;
-        z-index: 3;
-    }
-}
-
 /* Results */
 .results-section {
     padding: 100px 0;
@@ -499,9 +459,408 @@ p {
     font-size: 1.2rem;
 }
 
-/* CTA */
+/* Section Title & Subtitle */
+.section-title {
+    font-size: 3rem;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* Presentation Section (Seção 2) */
+.presentation-section {
+    padding: 120px 0;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.presentation-header {
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.differentiators-title-container {
+    margin-bottom: 40px;
+}
+
+.differentiators-tag {
+    display: inline-block;
+    background-color: #F4EAE0;
+    color: var(--accent-color);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.differentiators-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.differentiators-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.differentiator-card {
+    background-color: var(--bg-color);
+    padding: 50px 35px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.differentiator-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(140, 112, 95, 0.08);
+}
+
+.diff-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: #F4EAE0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 28px;
+    color: var(--accent-color);
+    transition: transform 0.4s ease;
+}
+
+.differentiator-card:hover .diff-icon-wrapper {
+    transform: scale(1.08);
+}
+
+.diff-icon-wrapper svg {
+    width: 30px;
+    height: 30px;
+}
+
+.differentiator-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.differentiator-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Treatments Section (Seção 3) */
+.treatments-section {
+    padding: 120px 0;
+    background-color: var(--bg-color);
+}
+
+.treatments-section .section-title {
+    margin-bottom: 60px;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.treatment-card {
+    background-color: var(--card-bg);
+    padding: 45px 35px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.treatment-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+.treatment-badge {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.treatment-card h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.treatment-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.featured-treatment {
+    grid-column: span 3;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F4EAE0;
+    border-color: transparent;
+    padding: 30px 45px;
+}
+
+.featured-treatment:hover {
+    border-color: var(--accent-color);
+}
+
+.featured-treatment .treatment-badge {
+    margin-bottom: 0;
+    background-color: var(--card-bg);
+}
+
+.featured-treatment-content {
+    flex: 1;
+    margin-right: 30px;
+}
+
+/* Highlights Section (Seção 4) */
+.highlights-section {
+    padding: 120px 0;
+    background-color: var(--card-bg);
+}
+
+.highlights-section .section-title {
+    margin-bottom: 60px;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.highlight-card {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.highlight-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.highlight-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.highlight-card:hover .highlight-image {
+    transform: scale(1.05);
+}
+
+.highlight-content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.highlight-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+.highlight-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex-grow: 1;
+}
+
+.highlight-content .btn {
+    margin-top: 10px;
+}
+
+/* Team Section (Seção 5) */
+.team-section {
+    padding: 120px 0;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.team-image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.team-image-frame {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    border: 8px solid #FFF;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.team-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.team-name {
+    font-size: 3.5rem;
+    color: var(--text-main);
+    line-height: 1.1;
+}
+
+.team-role {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: -8px;
+}
+
+.team-description {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* Testimonials Section (Seção 6) */
+.testimonials-section {
+    padding: 120px 0;
+    background-color: var(--card-bg);
+}
+
+.testimonials-section .section-title {
+    margin-bottom: 60px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--bg-color);
+    padding: 45px 35px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+}
+
+.testimonial-stars {
+    color: #D4AF37;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-style: italic;
+    flex-grow: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-color);
+    padding-top: 18px;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.author-procedure {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* CTA Section (Seção 7) */
 .cta-section {
-    padding: 140px 0;
+    padding: 150px 0;
     position: relative;
     background-image: url('cta_bg.png');
     background-size: cover;
@@ -518,36 +877,22 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(58, 49, 43, 0.88); /* Dark brown matching brand color with opacity */
+    background-color: rgba(58, 49, 43, 0.9);
     z-index: -1;
 }
 
 .cta-container {
     position: relative;
     z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .cta-section .cta-title {
     font-size: 3.5rem;
-    margin-bottom: 24px;
-}
-
-.cta-section .cta-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
-
-.cta-section .btn-primary {
-    background-color: var(--accent-color);
-    color: #fff;
-    border-color: var(--accent-color);
-}
-
-.cta-section .btn-primary:hover {
-    background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
+    margin-bottom: 40px;
+    color: #FFF;
 }
 
 /* Footer */
@@ -563,7 +908,7 @@ p {
     content: "";
     position: absolute;
     top: -10%;
-    right: -5%;
+    left: 18%;
     width: 600px;
     height: 600px;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%233A312B" d="M50 0 C 70 20, 70 40, 50 50 C 70 40, 100 30, 100 50 C 100 70, 70 60, 50 50 C 70 60, 70 80, 50 100 C 30 80, 30 60, 50 50 C 30 60, 0 70, 0 50 C 0 30, 30 40, 50 50 C 30 40, 30 20, 50 0 Z" /></svg>');
@@ -587,11 +932,11 @@ p {
 }
 
 .footer-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1.2fr 1fr;
     gap: 40px;
     margin-bottom: 50px;
-    align-items: flex-start;
+    align-items: start;
 }
 
 .footer-col {
@@ -603,9 +948,10 @@ p {
 }
 
 .footer-desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     margin-top: 10px;
+    line-height: 1.6;
 }
 
 .footer-col h4 {
@@ -623,6 +969,32 @@ p {
 }
 
 .footer-col a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact-item {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.footer-contact-item strong {
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.footer-contact-item p {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.footer-contact-item a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact-item a:hover {
     color: var(--accent-color);
 }
 
@@ -798,6 +1170,7 @@ body.no-scroll {
     /* Navbar Hamburger */
     .hamburger-menu-btn {
         display: flex;
+        margin-left: auto;
     }
     
     .nav-left, .nav-right {
@@ -809,26 +1182,22 @@ body.no-scroll {
         transform: none;
     }
 
-    .hamburger-menu-btn {
-        display: flex;
-        margin-left: auto; /* Pushes the menu to the right */
-    }
-
     .nav-container {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    /* Layout Side Margins (20px border) and 50px Section Heights */
+    /* Container adjustments */
     .container {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
 
+    /* Hero Responsive */
     .hero {
         flex-direction: column;
         padding-top: calc(var(--nav-height) + 30px);
-        padding-bottom: 50px !important;
+        padding-bottom: 60px;
         padding-left: 20px !important;
         padding-right: 20px !important;
         text-align: left;
@@ -844,7 +1213,7 @@ body.no-scroll {
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .hero-image-wrapper {
@@ -857,14 +1226,133 @@ body.no-scroll {
         max-width: 380px;
     }
 
-    /* Strict 50px vertical spacing between sections */
-    .benefits-section {
-        padding: 50px 0 !important;
+    /* Presentation Responsive */
+    .presentation-section {
+        padding: 60px 0;
+    }
+
+    .presentation-header {
+        margin-bottom: 50px;
     }
 
     .section-title {
         font-size: 2.2rem;
-        margin-bottom: 35px;
+    }
+
+    .differentiators-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .differentiator-card {
+        padding: 40px 25px;
+    }
+
+    /* Treatments Responsive */
+    .treatments-section {
+        padding: 60px 0;
+    }
+
+    .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .treatment-card {
+        padding: 35px 25px;
+    }
+
+    .featured-treatment {
+        grid-column: span 2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .featured-treatment-content {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Highlights Responsive */
+    .highlights-section {
+        padding: 60px 0;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .highlight-image-wrapper {
+        height: 220px;
+    }
+
+    /* Team Responsive */
+    .team-section {
+        padding: 60px 0;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .team-image-frame {
+        max-width: 320px;
+    }
+
+    .team-content {
+        align-items: center;
+    }
+
+    .team-name {
+        font-size: 2.8rem;
+    }
+
+    /* Testimonials Responsive */
+    .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* CTA Final Responsive */
+    .cta-section {
+        padding: 80px 20px;
+    }
+
+    .cta-section .cta-title {
+        font-size: 2.4rem;
+        margin-bottom: 30px;
+    }
+
+    /* Footer Mobile Alignment to the Left */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-col {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .footer::before {
+        left: -100px;
+        top: 329px;
+        transform: none;
+        width: 650px;
+        height: 650px;
+    }
+
+    /* Original benefits and layout responsiveness rules for endolaser.html */
+    .benefits-section {
+        padding: 50px 0 !important;
     }
 
     .section.bottom-90px {
@@ -913,32 +1401,581 @@ body.no-scroll {
         font-size: 1.1rem;
         margin-bottom: 0;
     }
+}
 
-    .cta-section {
-        padding: 50px 35px !important; /* 20px base + 15px inset for elements */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        border-radius: 0;
+@media (max-width: 600px) {
+    .treatments-grid {
+        grid-template-columns: 1fr;
     }
 
-    .cta-section .cta-title {
-        font-size: 2.4rem;
+    .featured-treatment {
+        grid-column: span 1;
+    }
+}
+
+/* LP Endolaser Page Styles */
+.lp-endolaser-page {
+    background-color: #FAF8F5;
+}
+
+.lp-badge {
+    display: inline-block;
+    background-color: #F4EAE0;
+    color: var(--accent-color);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.lp-hero {
+    min-height: 100vh;
+    padding-top: calc(var(--nav-height) + 40px);
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.lp-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.lp-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lp-hero-title {
+    font-size: 4.8rem;
+    line-height: 1.1;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.lp-hero-lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 580px;
+}
+
+.lp-hero-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.lp-bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    font-weight: 400;
+}
+
+.lp-bullet-item .bullet-icon {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.lp-hero-actions {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.lp-hero-actions .btn {
+    flex: unset;
+}
+
+.lp-hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lp-visual-frame {
+    width: 90%;
+    max-width: 440px;
+    aspect-ratio: 1/1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.lp-visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lp-visual-card {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    background-color: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lp-card-number {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.lp-card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.lp-card-text strong {
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.lp-card-text span {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Workflow Section (Como Funciona) */
+.lp-workflow-section {
+    padding: 120px 0;
+    background-color: var(--bg-color);
+}
+
+.lp-section-tag {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.lp-section-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.lp-workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.lp-step-card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.lp-step-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+}
+
+.step-num {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: #F4EAE0;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.lp-step-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.lp-step-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Areas Section */
+.lp-areas-section {
+    padding: 120px 0;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.lp-areas-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.lp-areas-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lp-areas-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.lp-area-group h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.lp-area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.area-tag {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.area-tag:hover {
+    background-color: #F4EAE0;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.lp-areas-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.lp-device-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+    position: relative;
+    max-width: 340px;
+    overflow: hidden;
+}
+
+.lp-device-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.lp-device-overlay {
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.lp-device-overlay strong {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.lp-device-overlay span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Clinical Section */
+.lp-clinical-section {
+    padding: 120px 0;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.lp-clinical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.clinical-statement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.clinical-lead {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: var(--accent-color);
+    margin-top: 20px;
+}
+
+.clinical-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+.clinical-signature {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+.clinical-signature strong {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.clinical-signature span {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+}
+
+/* FAQ Section */
+.lp-faq-section {
+    padding: 120px 0;
+    background-color: var(--card-bg);
+}
+
+.lp-faq-header {
+    margin-bottom: 60px;
+}
+
+.lp-faq-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.lp-results-box {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lp-results-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.lp-results-box p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.lp-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lp-faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 24px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: color 0.3s;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    transition: transform 0.3s;
+}
+
+.lp-faq-item.active .faq-question {
+    color: var(--accent-color);
+}
+
+.lp-faq-item.active .faq-question::after {
+    content: "−";
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 30px 24px 30px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    display: none;
+}
+
+.lp-faq-item.active .faq-answer {
+    display: block;
+}
+
+/* LP Final CTA */
+.lp-final-cta-section {
+    padding: 140px 0;
+    background-color: #F4EAE0;
+    border-top: 1px solid var(--border-color);
+}
+
+.lp-final-cta-section .section-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.lp-final-lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* Mobile & Tablet LP Rules */
+@media (max-width: 992px) {
+    .lp-hero-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
 
-    .cta-section .cta-text {
-        font-size: 1.05rem;
-        margin-bottom: 30px;
+    .lp-hero-title {
+        font-size: 3.2rem;
     }
 
-    /* Footer Mobile Alignment to the Left */
-    .footer-grid {
+    .lp-hero-visual {
+        justify-content: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .lp-visual-card {
+        left: -5px;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .lp-card-number {
+        font-size: 2rem;
+    }
+
+    .lp-card-text strong {
+        font-size: 0.85rem;
+    }
+
+    .lp-card-text span {
+        font-size: 0.7rem;
+    }
+
+    .lp-hero-actions {
+        flex-direction: column;
+    }
+
+    .lp-hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lp-workflow-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .lp-areas-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .lp-areas-visual {
+        order: -1;
+    }
+
+    .lp-clinical-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .footer-col {
-        align-items: flex-start !important;
-        text-align: left !important;
+    .lp-faq-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
+
+@media (max-width: 600px) {
+    .lp-workflow-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .lp-final-cta-section .section-title {
+        font-size: 2.4rem;
+    }
+}
+
