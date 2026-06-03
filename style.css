@@ -905,15 +905,20 @@ body.no-scroll {
         padding: 50px 0 !important;
     }
 
+    .results-section .section-title {
+        margin-top: 0;
+    }
+
     .results-text {
         font-size: 1.1rem;
+        margin-bottom: 0;
     }
 
     .cta-section {
         padding: 50px 35px !important; /* 20px base + 15px inset for elements */
         margin-left: 0 !important;
         margin-right: 0 !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 0 !important;
         border-radius: 0;
     }
 
