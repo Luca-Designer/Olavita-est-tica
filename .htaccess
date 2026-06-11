@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Redireciona de /pagina.html para /pagina (evita links duplicados e indexação antiga)
+RewriteCond %{THE_REQUEST} \s/+(.*?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 2. Resolve internamente URLs sem .html para o arquivo físico correspondente
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)$ $1.html [L]

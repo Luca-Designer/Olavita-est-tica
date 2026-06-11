@@ -1713,9 +1713,22 @@ body.no-scroll {
 }
 
 @media (max-width: 600px) {
+    .lp-carousel-btn {
+        display: none !important;
+    }
+    .lp-carousel-viewport {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: auto;
+    }
+    .lp-carousel-track {
+        gap: 16px;
+    }
     .lp-carousel-track .lp-step-card {
-        flex: 0 0 100%;
-        max-width: 100%;
+        flex: 0 0 85%;
+        max-width: 85%;
     }
 }
 
@@ -2439,5 +2452,28 @@ body.no-scroll {
     }
 }
 
-
-
+/* Disable carousel on mobile for specific instances */
+@media (max-width: 768px) {
+    .disable-mobile-carousel .lp-carousel-viewport {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+    .disable-mobile-carousel .lp-carousel-track {
+        display: flex;
+        flex-direction: column;
+        gap: 20px !important;
+        transform: none !important;
+        width: 100% !important;
+    }
+    .disable-mobile-carousel .lp-step-card {
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    .disable-mobile-carousel .lp-carousel-btn,
+    .disable-mobile-carousel .lp-carousel-dots {
+        display: none !important;
+    }
+}
