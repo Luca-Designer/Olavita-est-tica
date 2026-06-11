@@ -619,6 +619,7 @@ p {
     font-size: 1.45rem;
     margin-bottom: 12px;
     color: var(--text-main);
+    font-weight: 600;
 }
 
 .treatment-card p {
