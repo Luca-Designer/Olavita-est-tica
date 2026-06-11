@@ -48,6 +48,7 @@ a {
 h1, h2, h3, .brand {
     font-family: var(--font-heading);
     font-weight: 500;
+    text-wrap: balance;
 }
 
 p {
@@ -630,12 +631,14 @@ p {
 
 .featured-treatment {
     grid-column: span 3;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     background-color: #F4EAE0;
     border-color: transparent;
     padding: 30px 45px;
+    gap: 10px;
 }
 
 .featured-treatment:hover {
@@ -896,7 +899,7 @@ p {
 }
 
 .cta-section .cta-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     margin-bottom: 40px;
     color: #FFF;
 }
@@ -1336,7 +1339,7 @@ body.no-scroll {
     }
 
     .cta-section .cta-title {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         margin-bottom: 30px;
     }
 
@@ -2088,7 +2091,7 @@ body.no-scroll {
 }
 
 .lp-final-cta-section .section-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     margin-bottom: 20px;
     color: #FFF;
 }
@@ -2181,7 +2184,7 @@ body.no-scroll {
     }
     
     .lp-final-cta-section .section-title {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 }
 
